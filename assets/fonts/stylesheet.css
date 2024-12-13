@@ -1,0 +1,399 @@
+/* -------------- Thei --------------  */
+@font-face {
+    font-family: "Thei";
+    src: url("thei/1FTVVIPThei.woff2") format("woff2"),
+        url("thei/1FTVVIPThei.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* -------------- Mulish --------------  */
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-Italic.woff2") format("woff2"),
+        url("Mulish/Mulish-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-SemiBoldItalic.woff2") format("woff2"),
+        url("Mulish/Mulish-SemiBoldItalic.woff") format("woff");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-BoldItalic.woff2") format("woff2"),
+        url("Mulish/Mulish-BoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-MediumItalic.woff2") format("woff2"),
+        url("Mulish/Mulish-MediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-LightItalic.woff2") format("woff2"),
+        url("Mulish/Mulish-LightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-ExtraBoldItalic.woff2") format("woff2"),
+        url("Mulish/Mulish-ExtraBoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-BlackItalic.woff2") format("woff2"),
+        url("Mulish/Mulish-BlackItalic.woff") format("woff");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-ExtraBold.woff2") format("woff2"),
+        url("Mulish/Mulish-ExtraBold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-Black.woff2") format("woff2"),
+        url("Mulish/Mulish-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-ExtraLightItalic.woff2") format("woff2"),
+        url("Mulish/Mulish-ExtraLightItalic.woff") format("woff");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-Medium.woff2") format("woff2"),
+        url("Mulish/Mulish-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-Bold.woff2") format("woff2"),
+        url("Mulish/Mulish-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-SemiBold.woff2") format("woff2"),
+        url("Mulish/Mulish-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-ExtraLight.woff2") format("woff2"),
+        url("Mulish/Mulish-ExtraLight.woff") format("woff");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-Light.woff2") format("woff2"),
+        url("Mulish/Mulish-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mulish";
+    src: url("Mulish/Mulish-Regular.woff2") format("woff2"),
+        url("Mulish/Mulish-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* -------------- Dancing Script --------------  */
+@font-face {
+    font-family: "Dancing-script";
+    src: url("DancingScript/SVN-DancingScript.woff2") format("woff2"),
+        url("DancingScript/SVN-DancingScript.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* -------------- Edwardian Script --------------  */
+@font-face {
+    font-family: "Edwardian-script";
+    src: url("EdwardianScript/SFUEdwardianScript.woff2") format("woff2"),
+        url("EdwardianScript/SFUEdwardianScript.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Thư pháp */
+/* -------------- Hottroof Semhesta --------------  */
+@font-face {
+    font-family: "Hottroof-semhesta";
+    src: url("HottroofSemhesta/SVN-HottroofSemhesta.woff2") format("woff2"),
+        url("HottroofSemhesta/SVN-HottroofSemhesta.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Thư pháp */
+/* -------------- Butlong --------------  */
+@font-face {
+    font-family: "Butlong";
+    src: url("Butlong/VNI-Butlong.woff2") format("woff2"),
+        url("Butlong/VNI-Butlong.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* -------------- Hamstring --------------  */
+@font-face {
+    font-family: "Hamstring";
+    src: url("Hamstring/SVN-Hamstring.woff2") format("woff2"),
+        url("Hamstring/SVN-Hamstring.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* -------------- Nabila --------------  */
+@font-face {
+    font-family: "Nabila";
+    src: url("Nabila/iCielNabila.woff2") format("woff2"),
+        url("Nabila/iCielNabila.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* -------------- Thư Pháp Thiên An (năm mới) --------------  */
+@font-face {
+    font-family: "ThuPhap";
+    src: url("ThuPhap/UTMThuPhapThienAn.woff2") format("woff2"),
+        url("ThuPhap/UTMThuPhapThienAn.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* -------------- Blacksword --------------  */
+@font-face {
+    font-family: "Blacksword";
+    src: url("Blacksword/1FTVVIPBlacksword.woff2") format("woff2"),
+        url("Blacksword/1FTVVIPBlacksword.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* -------------- Poppins --------------  */
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-Thin.woff2") format("woff2"),
+        url("Poppins/Poppins-Thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-SemiBoldItalic.woff2") format("woff2"),
+        url("Poppins/Poppins-SemiBoldItalic.woff") format("woff");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-MediumItalic.woff2") format("woff2"),
+        url("Poppins/Poppins-MediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-SemiBold.woff2") format("woff2"),
+        url("Poppins/Poppins-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-Medium.woff2") format("woff2"),
+        url("Poppins/Poppins-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-ThinItalic.woff2") format("woff2"),
+        url("Poppins/Poppins-ThinItalic.woff") format("woff");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-Regular.woff2") format("woff2"),
+        url("Poppins/Poppins-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-ExtraLight.woff2") format("woff2"),
+        url("Poppins/Poppins-ExtraLight.woff") format("woff");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-Italic.woff2") format("woff2"),
+        url("Poppins/Poppins-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-ExtraBold.woff2") format("woff2"),
+        url("Poppins/Poppins-ExtraBold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-ExtraLightItalic.woff2") format("woff2"),
+        url("Poppins/Poppins-ExtraLightItalic.woff") format("woff");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-ExtraBoldItalic.woff2") format("woff2"),
+        url("Poppins/Poppins-ExtraBoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-LightItalic.woff2") format("woff2"),
+        url("Poppins/Poppins-LightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-BoldItalic.woff2") format("woff2"),
+        url("Poppins/Poppins-BoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-Light.woff2") format("woff2"),
+        url("Poppins/Poppins-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-Bold.woff2") format("woff2"),
+        url("Poppins/Poppins-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-BlackItalic.woff2") format("woff2"),
+        url("Poppins/Poppins-BlackItalic.woff") format("woff");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins/Poppins-Black.woff2") format("woff2"),
+        url("Poppins/Poppins-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
