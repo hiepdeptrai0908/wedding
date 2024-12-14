@@ -4,6 +4,7 @@
 
 :root {
     --primary-color: #ff96a7;
+    --color-pink: #ffb1be;
     --bold-color: #ff3a3a;
 }
 
@@ -48,6 +49,18 @@ button {
     color: var(--bold-color);
 }
 
+.size-20 {
+    font-size: 2rem;
+}
+
+.size-25 {
+    font-size: 2.5rem;
+}
+
+.size-30 {
+    font-size: 3rem;
+}
+
 .btn {
     background-color: var(--primary-color);
     font-weight: 700;
@@ -64,6 +77,10 @@ button {
 
 .bold-color {
     color: var(--bold-color);
+}
+
+.color-pink {
+    color: var(--color-pink);
 }
 
 /* Header */
@@ -99,7 +116,7 @@ button {
 .header__form {
     position: relative;
     top: -40px;
-    width: min(500px, 100% - 28px);
+    width: min(500px, 100% - 38px);
     height: auto;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 16px;
@@ -147,16 +164,116 @@ button {
     position: absolute;
     left: 50%;
     top: 50%;
-    translate: -50% -50%;
+    translate: -50% -100%;
     color: #fff;
-    font-size: 5rem;
+    font-size: 4rem;
     font-family: "Lilita";
     text-shadow: 2px 2px 2px #333;
     text-align: center;
-    display: hidden;
+    display: flex;
 }
 
 .header__update-name-btn {
     font-family: "Mulish";
     font-size: 1.6rem;
+}
+
+.arrow-up {
+    --size: 40px;
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    bottom: 20px;
+    left: 48%;
+    transform: translateX(-50%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--size);
+    color: var(--color-pink);
+}
+
+.header__arrow-up {
+    display: none;
+}
+
+/* Caption */
+.caption {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    background-color: #f1f3f4;
+    display: flex;
+    flex-direction: column;
+}
+
+.caption__heading {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    font-size: 20rem;
+    font-family: "Hamstring";
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.caption__names {
+    gap: 50px;
+    font-family: "Thei";
+
+    display: flex;
+    justify-content: center; /* Căn ngang */
+    align-items: center; /* Căn dọc */
+    height: 100vh;
+}
+
+.caption__name-item {
+    font-weight: 400;
+    font-size: 6rem;
+}
+
+.caption__name-item:nth-child(1) {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.caption__name-item:nth-child(2) {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+/* Animation */
+.animation__flipY {
+    display: inline-block;
+    animation: flipY 2s infinite linear reverse;
+}
+
+.animation__slide-up {
+    animation: animationSlideUp 1.2s ease-out infinite;
+}
+
+@keyframes flipY {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes animationSlideUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
 }

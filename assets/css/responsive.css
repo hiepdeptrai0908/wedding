@@ -15,4 +15,29 @@
     .header__des {
         font-size: 1.2rem;
     }
+
+    .header__submit-text {
+        font-size: 3.6rem;
+        max-width: calc(100% - 28px);
+    }
+
+    .header__form-label {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    /* Caption */
+    .caption__heading {
+        font-size: 10rem;
+    }
+
+    .caption__names {
+        gap: 10px;
+        justify-content: space-around;
+    }
+
+    .caption__name-item {
+        font-size: 2rem;
+        align-items: center;
+    }
 }

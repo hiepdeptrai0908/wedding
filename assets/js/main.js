@@ -1,6 +1,15 @@
 // Animated AOS
 AOS.init({
     animatedClassName: "aos-animate",
+
+    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+    offset: 120, // offset (in px) from the original trigger point
+    delay: 0, // values from 0 to 3000, with step 50ms
+    duration: 1000, // values from 0 to 3000, with step 50ms
+    easing: "ease", // default easing for AOS animations
+    once: false, // whether animation should happen only once - while scrolling down
+    mirror: false, // whether elements should animate out while scrolling past them
+    anchorPlacement: "bottom-bottom",
 });
 
 // Elements
@@ -12,6 +21,12 @@ const headerElements = {
     formInputRelation: document.querySelector(".header__form-input--relation"),
     formBtn: document.querySelector(".header__form-btn"),
     submitText: document.querySelector(".header__submit-text"),
+    arrowUp: document.querySelector(".header__arrow-up"),
+};
+
+const captionElements = {
+    caption: document.querySelector(".caption"),
+    nameItem: document.querySelector(".caption__name-item"),
 };
 
 const otherElements = {
@@ -52,12 +67,12 @@ headerElements.formBtn.addEventListener("click", (e) => {
 
     if (userInfo.name) {
         const honorific = customFunctions.getHonorific(userInfo.name);
-        headerElements.submitText.innerHTML = `Cảm ơn <span class="primary-color">
+        headerElements.submitText.innerHTML = `Cảm ơn <span class="color-pink">
         ${userInfo.name}</span> đã ghé xem thiệp cưới
         ${
             honorific
                 ? ` của 
-                <span class="primary-color">${honorific}</span>`
+                <span class="color-pink">${honorific}</span>`
                 : ""
         }</br>
         <button class="btn header__update-name-btn">SỬA LẠI TÊN</button>
@@ -73,6 +88,10 @@ headerElements.formBtn.addEventListener("click", (e) => {
             "animate__delay-1s"
         );
 
+        // Show
+        customFunctions.showElement(captionElements.caption);
+        customFunctions.showElement(headerElements.arrowUp);
+
         const headerUpdateNameBtnEl = document.querySelector(
             ".header__update-name-btn"
         );
@@ -80,6 +99,8 @@ headerElements.formBtn.addEventListener("click", (e) => {
         // Khi ấn vào botton sửa lại tên
         headerUpdateNameBtnEl.addEventListener("click", () => {
             userInfo.name && otherElements.appMusic.pause();
+
+            // Text
             headerElements.submitText.classList.remove(
                 "animate__animated",
                 "animate__fadeInRight",
@@ -91,6 +112,7 @@ headerElements.formBtn.addEventListener("click", (e) => {
                 "animate__fadeOutRight"
             );
 
+            // Form
             headerElements.form.classList.remove(
                 "animate__animated",
                 "animate__fadeOutLeft"
@@ -99,6 +121,11 @@ headerElements.formBtn.addEventListener("click", (e) => {
                 "animate__animated",
                 "animate__fadeInLeft"
             );
+
+            // Hide
+            customFunctions.hideElement(captionElements.caption);
+            customFunctions.hideElement(headerElements.arrowUp);
+
             headerElements.formInputName.focus();
         });
     }
@@ -117,6 +144,14 @@ const customFunctions = {
                     word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
             )
             .join(" ");
+    },
+    // Show - Hide elements
+    showElement: (element) => {
+        element.style.display = "flex";
+    },
+
+    hideElement: (element) => {
+        element.style.display = "none";
     },
     // Logic xác định xưng hô
     getHonorific: (name) => {
@@ -154,3 +189,16 @@ const customFunctions = {
         return honorific; // Trả về honorific
     },
 };
+
+// Scroll events
+window.addEventListener("scroll", () => {
+    let scrollValue = window.scrollY;
+    const currentScroll = window.scrollY;
+
+    // Kiểm tra người dùng cuộn lên hay xuống
+    if (currentScroll < scrollValue) {
+        customFunctions.showElement(headerElements.arrowUp);
+    } else {
+        customFunctions.hideElement(headerElements.arrowUp);
+    }
+});
