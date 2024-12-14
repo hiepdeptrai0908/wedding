@@ -98,7 +98,7 @@ button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(/assets/img/img-1.avif);
+    background-image: url(/assets/img/background/header_bg_destop.png);
     background-repeat: no-repeat;
     background-size: cover;
     filter: brightness(0.8);
@@ -197,19 +197,46 @@ button {
     display: none;
 }
 
+/* Info days */
+
+.info-days {
+    /* background: red; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Lilita";
+    background: url(/assets/img/background/bg_01.png);
+    background-repeat: round;
+}
+
+.info-day__dl {
+    font-size: 10rem;
+    color: orange;
+}
+
+.info-day__label {
+    font-size: 3rem;
+}
+
 /* Caption */
 .caption {
     position: relative;
     width: 100vw;
-    height: auto;
-    background-color: #f1f3f4;
+    height: 100vh;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
 }
 
 .caption__heading {
-    position: sticky;
+    position: absolute;
     top: 0;
+    right: 0;
     width: 100%;
     height: 100vh;
     font-size: 20rem;
@@ -219,30 +246,19 @@ button {
 }
 
 .caption__names {
-    gap: 50px;
-    font-family: "Thei";
+    position: absolute;
+    top: 50%;
+    left: 0;
 
     display: flex;
-    justify-content: center; /* Căn ngang */
-    align-items: center; /* Căn dọc */
-    height: 100vh;
-}
-
-.caption__name-item {
+    justify-content: center;
+    gap: 50px;
+    font-family: "Thei";
     font-weight: 400;
     font-size: 6rem;
-}
 
-.caption__name-item:nth-child(1) {
-    position: sticky;
-    top: 0;
-    left: 0;
-}
-
-.caption__name-item:nth-child(2) {
-    position: sticky;
-    top: 0;
-    left: 0;
+    /* background-color: red; */
+    width: 100%;
 }
 
 /* Animation */

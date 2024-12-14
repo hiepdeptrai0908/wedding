@@ -12,6 +12,12 @@
 
 /* Mobile */
 @media screen and (max-width: 767.98px) {
+    .header__background {
+        position: absolute;
+        background-image: url(/assets/img/background/header_bg_mobile.png);
+        background-position: 50% 50%;
+        z-index: -1;
+    }
     .header__des {
         font-size: 1.2rem;
     }
@@ -26,18 +32,41 @@
         align-items: start;
     }
 
+    /* Info days */
+    .info-days {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Lilita";
+        background: url(/assets/img/background/bg_02.jpg);
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .info-day__dl {
+        font-size: 4rem;
+        color: orange;
+    }
+
+    .info-day__label {
+        font-size: 1.6rem;
+    }
+
     /* Caption */
     .caption__heading {
         font-size: 10rem;
     }
 
     .caption__names {
-        gap: 10px;
-        justify-content: space-around;
+        top: 20%;
+        gap: 0px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 
     .caption__name-item {
-        font-size: 2rem;
-        align-items: center;
+        font-size: 5rem;
     }
 }
