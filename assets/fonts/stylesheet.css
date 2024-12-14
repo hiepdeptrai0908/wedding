@@ -1,8 +1,8 @@
 /* -------------- Thei --------------  */
 @font-face {
     font-family: "Thei";
-    src: url("thei/1FTVVIPThei.woff2") format("woff2"),
-        url("thei/1FTVVIPThei.woff") format("woff");
+    src: url("Thei/1FTVVIPThei.woff2") format("woff2"),
+        url("Thei/1FTVVIPThei.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
