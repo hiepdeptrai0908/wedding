@@ -81,8 +81,23 @@
             content="./assets/img/favicon/ms-icon-144x144.png"
         />
         <meta name="theme-color" content="#ffffff" />
+
+        <!-- Animation AOS -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
         <!-- Embed fonts -->
         <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+
+        <!-- Font awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        />
+
         <!-- Reset css -->
         <link rel="stylesheet" href="./assets/css/reset.css" />
 
@@ -91,27 +106,37 @@
 
         <!-- Responsive css -->
         <link rel="stylesheet" href="./assets/css/responsive.css" />
-        <title>Thiệp Mời Hiệp & Ngọc</title>
+        <title>Thiệp Cưới Hiệp & Ngọc</title>
     </head>
     <body>
         <div class="container">
             <div class="header">
-                <div class="header__backgound"></div>
-                <form class="header__form">
+                <div class="header__background"></div>
+                <form class="header__form" data-aos="fade-in">
                     <div class="header__title">
                         Xin chào
                         <span class="header__title--name"></span>
                     </div>
                     <div class="header__form-group">
-                        <label class="header__form-label" for="name"
-                            >Vui lòng điền danh xưng</label
-                        >
+                        <label class="header__form-label" for="name">
+                            <span
+                                ><i class="fa-solid fa-pen-to-square"></i>
+                                <span class="bold-color">Cô dâu</span>
+                                -
+                                <span class="bold-color">Chú rể</span>
+                                gọi bạn là gì ?</span
+                            >
+                            <p class="header__form-valid--name" hidden>
+                                Vui lòng nhập danh xưng !
+                            </p>
+                        </label>
                         <input
                             class="input header__form-input header__form-input--name"
                             type="text"
                             id="name"
-                            placeholder="Ví dụ: Chị Trang"
+                            placeholder="Ví dụ: Anh Minh, Chị Trang, Bạn Sinh"
                             autocomplete="off"
+                            autofocus
                         />
                     </div>
 
@@ -128,11 +153,27 @@
                             <option value="groom">Người quen của cả hai</option>
                         </select>
                     </div>
+                    <div class="header__des">
+                        <p><i>Chú rể: Triệu Quang Hiệp</i></p>
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        <p><i>Cô dâu: Phạm Bích Ngọc</i></p>
+                    </div>
 
                     <button class="btn header__form-btn">XÁC NHẬN</button>
                 </form>
+                <div class="header__submit-text"></div>
             </div>
+
+            <!-- App music -->
+            <audio
+                class="app-music"
+                src="./assets/music/Beautiful_in_White__Canon_in_D_-_Shane_Filan.mp3"
+            ></audio>
         </div>
+
+        <!-- Animation AOS -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="./assets/js/animationAos.js"></script>
         <script src="./assets/js/main.js"></script>
     </body>
 </html>

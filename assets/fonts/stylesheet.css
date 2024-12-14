@@ -397,3 +397,13 @@
     font-style: normal;
     font-display: swap;
 }
+
+/* -------------- Lilita --------------  */
+@font-face {
+    font-family: "Lilita";
+    src: url("Lilita/1FTVVIPLilitaOne.woff2") format("woff2"),
+        url("Lilita/1FTVVIPLilitaOne.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

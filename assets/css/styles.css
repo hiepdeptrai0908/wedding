@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #ff96a7;
+    --bold-color: #ff3a3a;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -11,14 +16,17 @@ body {
     font-family: "Mulish";
     line-height: 1.6;
     caret-color: red;
+    color: #333;
 }
 
+/* Common */
 input,
 textarea,
 select,
 button {
     font-size: inherit;
     font-family: inherit;
+    color: inherit;
 }
 
 .container {
@@ -27,23 +35,38 @@ button {
 }
 
 .input,
-.btn {
-    height: 48px;
-    padding: 0 18px;
+.btn,
+.select {
+    height: 44px;
+    padding: 0 14px;
     border-radius: 8px;
-    border: solid 1px rgb(255, 207, 215);
+    border: solid 1px var(--primary-color);
     outline: none;
 }
 
+.fa-solid {
+    color: var(--bold-color);
+}
+
 .btn {
-    background-color: rgb(255, 207, 215);
+    background-color: var(--primary-color);
     font-weight: 700;
+    z-index: 1;
 }
 
 .btn:hover {
     opacity: 0.8;
 }
 
+.primary-color {
+    color: var(--primary-color);
+}
+
+.bold-color {
+    color: var(--bold-color);
+}
+
+/* Header */
 .header {
     position: relative;
     width: 100%;
@@ -54,7 +77,7 @@ button {
     flex-direction: column;
 }
 
-.header__backgound {
+.header__background {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -67,13 +90,16 @@ button {
 
 .header__title {
     font-family: "Dancing-script";
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 16px;
 }
 
 .header__form {
-    width: min(500px, 100% - 38px);
+    position: relative;
+    top: -40px;
+    width: min(500px, 100% - 28px);
     height: auto;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 16px;
@@ -83,13 +109,54 @@ button {
 .header__form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
+}
+
+.header__form-label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__form-valid--name {
+    color: red;
+    font-style: italic;
+}
+
+.header__des {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-style: italic;
 }
 
 .header__form-btn {
     display: block;
     margin: 0 auto;
     width: 100%;
-    margin: 30px 0 20px;
+    margin: 30px 0 14px;
     cursor: pointer;
+    color: #fff;
+}
+
+.header__submit-text {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    color: #fff;
+    font-size: 5rem;
+    font-family: "Lilita";
+    text-shadow: 2px 2px 2px #333;
+    text-align: center;
+    display: hidden;
+}
+
+.header__update-name-btn {
+    font-family: "Mulish";
+    font-size: 1.6rem;
 }
