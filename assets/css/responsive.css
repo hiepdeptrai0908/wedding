@@ -86,6 +86,10 @@
         font-size: 5rem;
     }
 
+    .caption__img-icon {
+        width: 100%;
+    }
+
     .caption__svg-icon {
         width: 300px;
         height: 300px;
