@@ -1,5 +1,17 @@
 /* PC */
 @media screen and (min-width: 992px) {
+    .show-mobile {
+        display: none;
+    }
+
+    .caption__svg-icon {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-40%);
+    }
 }
 
 /* Tablet & mobile */
@@ -12,6 +24,14 @@
 
 /* Mobile */
 @media screen and (max-width: 767.98px) {
+    .hide-mobile {
+        display: none;
+    }
+
+    .size-20-mobile {
+        font-size: 2rem;
+    }
+
     .header__background {
         position: absolute;
         background-image: url(/assets/img/background/header_bg_mobile.png);
@@ -34,11 +54,7 @@
 
     /* Info days */
     .info-days {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
-        font-family: "Lilita";
         background: url(/assets/img/background/bg_02.jpg);
         background-size: cover;
         background-position: 50% 50%;
@@ -68,5 +84,16 @@
 
     .caption__name-item {
         font-size: 5rem;
+    }
+
+    .caption__svg-icon {
+        width: 300px;
+        height: 300px;
+        align-items: center;
+        text-align: center;
+
+        padding: 10px;
+        margin-top: 40px;
+        border-radius: 50%;
     }
 }

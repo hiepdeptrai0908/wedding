@@ -24,6 +24,10 @@ const headerElements = {
     arrowUp: document.querySelector(".header__arrow-up"),
 };
 
+const infoDayElements = {
+    infoDay: document.querySelector(".info-days"),
+};
+
 const captionElements = {
     caption: document.querySelector(".caption"),
     nameItem: document.querySelector(".caption__name-item"),
@@ -89,6 +93,7 @@ headerElements.formBtn.addEventListener("click", (e) => {
         );
 
         // Show
+        customFunctions.showElement(infoDayElements.infoDay);
         customFunctions.showElement(captionElements.caption);
         customFunctions.showElement(headerElements.arrowUp);
 
@@ -123,6 +128,7 @@ headerElements.formBtn.addEventListener("click", (e) => {
             );
 
             // Hide
+            customFunctions.hideElement(infoDayElements.infoDay);
             customFunctions.hideElement(captionElements.caption);
             customFunctions.hideElement(headerElements.arrowUp);
 
