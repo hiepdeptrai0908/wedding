@@ -95,7 +95,7 @@ button {
 }
 
 .header__background {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     background-image: url(/assets/img/background/header_bg_destop.png);
@@ -197,78 +197,119 @@ button {
     display: none;
 }
 
-/* Info days */
-
-.info-days {
-    /* background: red; */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: "Lilita";
-    background: url(/assets/img/background/bg_01.png);
-    background-repeat: round;
+/* SECTION 1 */
+.ladi-wraper {
+    background-color: white;
 }
 
-.info-day__dl {
-    font-size: 10rem;
-    color: orange;
-}
-
-.info-day__label {
-    font-size: 3rem;
-    font-family: "Mulish";
-    font-weight: 700;
-}
-
-/* Caption */
-.caption {
+.ladi-section {
     position: relative;
-    top: -20px;
-    width: 100vw;
     height: 100vh;
-    background-color: #fff;
-    display: none;
-    flex-direction: column;
-}
-
-.caption__heading {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    font-size: 20rem;
-    font-family: "Hamstring";
-    text-align: center;
-    color: var(--primary-color);
-}
-
-.caption__names {
-    position: absolute;
-    top: 50%;
-    left: 0;
-
     display: flex;
     justify-content: center;
-    gap: 50px;
-    font-family: "Thei";
-    font-weight: 400;
-    font-size: 6rem;
-
-    /* background-color: red; */
-    width: 100%;
+    flex-direction: column;
 }
 
-.caption__svg-icon {
-    border: solid 1px #d79600;
-    padding: 10px;
-    margin-top: 40px;
-    border-radius: 50%;
+.ladi__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    filter: brightness(50%);
+}
+
+.lady__shape1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: auto;
+    z-index: 1;
+}
+
+.ladi__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.ladi__headline {
+    font-family: "Fleur";
+    font-size: 10rem;
+    color: white;
+    z-index: 1;
+}
+
+.ladi__headline-date--DL {
+    font-family: "Thei";
+}
+
+.ladi__headline-date--AL {
+    font-family: "Mulish";
+    font-size: 2rem;
+}
+
+/* Info couple */
+.ladi__info {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.info-couple-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px; /* Khoảng cách giữa các mục */
+}
+
+.couple-item {
+    text-align: center;
+}
+
+.couple-img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 600px;
+    background: url(/assets/img/mark/4.png) center center no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.couple-img {
+    width: calc(100% - 140px);
+    height: calc(100% - 140px);
+    object-fit: cover;
+    border-radius: 20px;
+    border: solid 3px #bf9758;
+}
+
+.couple-item--name {
+    font-family: "Fleur";
+    font-size: 5rem;
+    color: #bf9758;
+}
+
+.couple-heart-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.couple-heart {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
 }
 
 /* Animation */

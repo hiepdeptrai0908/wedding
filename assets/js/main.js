@@ -93,8 +93,6 @@ headerElements.formBtn.addEventListener("click", (e) => {
         );
 
         // Show
-        customFunctions.showElement(infoDayElements.infoDay);
-        customFunctions.showElement(captionElements.caption);
         customFunctions.showElement(headerElements.arrowUp);
 
         const headerUpdateNameBtnEl = document.querySelector(
@@ -128,8 +126,6 @@ headerElements.formBtn.addEventListener("click", (e) => {
             );
 
             // Hide
-            customFunctions.hideElement(infoDayElements.infoDay);
-            customFunctions.hideElement(captionElements.caption);
             customFunctions.hideElement(headerElements.arrowUp);
 
             headerElements.formInputName.focus();

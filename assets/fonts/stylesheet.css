@@ -407,3 +407,23 @@
     font-style: normal;
     font-display: swap;
 }
+
+/* -------------- Fleur --------------  */
+@font-face {
+    font-family: "Fleur";
+    src: url("Fleur/FleurDeLeah-Regular.woff2") format("woff2"),
+        url("Fleur/FleurDeLeah-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* -------------- Viettay --------------  */
+@font-face {
+    font-family: "Viettay";
+    src: url("Viettay/THViettay5.woff2") format("woff2"),
+        url("Viettay/THViettay5.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,163 @@
+:root {
+    --delay: 0s;
+    --timing-func: ease-out;
+    --duration: 1s;
+}
+
+/* Flip */
+.flip__y {
+    display: inline-block;
+    animation: flipY var(--duration) var(--timing-func);
+}
+
+/* Slide */
+.slide__up {
+    animation: slideUp var(--duration) var(--timing-func);
+}
+
+/* Fade */
+.fade__in {
+    animation: fadeIn var(--duration) var(--timing-func);
+}
+
+.fade__in-left {
+    animation: fadeInLeft var(--duration) var(--timing-func);
+}
+
+.fade__in-right {
+    animation: fadeInRight var(--duration) var(--timing-func);
+}
+
+.fade__out-left {
+    animation: fadeOutLeft var(--duration) var(--timing-func);
+}
+
+.fade__out-right {
+    animation: fadeOutRight var(--duration) var(--timing-func);
+}
+
+/* Flip */
+@keyframes flipY {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Slide */
+@keyframes slideUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}
+
+/* Fade */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate(100%, -50%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes fadeOutLeft {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+}
+
+@keyframes fadeOutRight {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    to {
+        opacity: 0;
+        transform: translate(100%, -50%);
+    }
+}
+
+/* CLASS property */
+/* timing function */
+.timing-func-linear {
+    animation-timing-function: linear;
+}
+
+/* Duration */
+.duration-2s {
+    animation-duration: 2s;
+}
+
+/* iteration count */
+.count-infinite {
+    animation-iteration-count: infinite;
+}
+
+/* Direction */
+.direction-reverse {
+    animation-direction: reverse;
+}
+
+.direction-alternate {
+    animation-direction: alternate;
+}
+
+/* Delay */
+.delay-05s {
+    animation-delay: 0.5s;
+}
+
+.delay-1s {
+    animation-delay: 1s;
+}
+
+.delay-1-5s {
+    animation-delay: 1.5s;
+}
+
+.delay-2s {
+    animation-delay: 2s;
+}
+
+/* Fill mode */
+.fill-mode-forwards {
+    animation-fill-mode: forwards;
+}
