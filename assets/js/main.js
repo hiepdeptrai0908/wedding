@@ -12,6 +12,11 @@ AOS.init({
     anchorPlacement: "top-bottom",
 });
 
+const settings = {
+    countdownDate: new Date("March 20, 2025 17:30:00").getTime(), // Ngày cưới
+    stk: "102601090897", // Số tài khoản
+};
+
 // Elements
 const headerElements = {
     titleName: document.querySelector(".header__title--name"),
@@ -22,6 +27,12 @@ const headerElements = {
     formBtn: document.querySelector(".header__form-btn"),
     submitText: document.querySelector(".header__submit-text"),
     arrowUp: document.querySelector(".header__arrow-up"),
+};
+
+const userInfo = {
+    name: "",
+    relation: "",
+    phoneNumber: "",
 };
 
 const infoDayElements = {
@@ -37,10 +48,37 @@ const otherElements = {
     appMusic: document.querySelector(".app-music"),
 };
 
-const userInfo = {
-    name: "",
-    relation: "",
-    phoneNumber: "",
+// Section elements
+const sectionElements = {
+    section1: document.querySelector(".section1"),
+    section2: document.querySelector(".section2"),
+    section3: document.querySelector(".section3"),
+    section4: document.querySelector(".section4"),
+    section5: document.querySelector(".section5"),
+    section6: document.querySelector(".section6"),
+    section7: document.querySelector(".section7"),
+    bgImg: document.querySelector(".bg-img"),
+    title: document.querySelector(".title"),
+};
+
+// Section 1 Elements
+const section1Elements = {
+    heading: document.querySelector(".section1 .heading"),
+    desc: document.querySelector(".section1 .desc"),
+};
+
+// Section 5 elements
+const section5Elements = {
+    giftBtn: document.querySelector(".gift-btn"),
+    acceptOption: document.querySelector(".options"),
+    wishInput: document.querySelector("#wish"),
+    acceptBtn: document.querySelector(".info-accept-btn"),
+};
+
+// Section 6 elements
+const section6Elements = {
+    closeBtn: document.querySelector(".close-btn"),
+    section6: document.querySelector(".section6"),
 };
 
 // Header
@@ -94,6 +132,14 @@ headerElements.formBtn.addEventListener("click", (e) => {
 
         // Show
         customFunctions.showElement(headerElements.arrowUp);
+        customFunctions.showElement(sectionElements.section1);
+        customFunctions.showElement(sectionElements.section2);
+        customFunctions.showElement(sectionElements.section3);
+        customFunctions.showElement(sectionElements.section4);
+        customFunctions.showElement(sectionElements.section5);
+        customFunctions.showElement(sectionElements.section7);
+        customFunctions.showElement(sectionElements.bgImg);
+        customFunctions.showElement(sectionElements.title);
 
         const headerUpdateNameBtnEl = document.querySelector(
             ".header__update-name-btn"
@@ -127,18 +173,141 @@ headerElements.formBtn.addEventListener("click", (e) => {
 
             // Hide
             customFunctions.hideElement(headerElements.arrowUp);
+            customFunctions.hideElement(sectionElements.section1);
+            customFunctions.hideElement(sectionElements.section2);
+            customFunctions.hideElement(sectionElements.section3);
+            customFunctions.hideElement(sectionElements.section4);
+            customFunctions.hideElement(sectionElements.section5);
+            customFunctions.hideElement(sectionElements.section7);
+            customFunctions.hideElement(sectionElements.bgImg);
+            customFunctions.hideElement(sectionElements.title);
 
             headerElements.formInputName.focus();
         });
+
+        section1Elements.desc.innerHTML = `
+            <p data-aos="fade-up">
+                * Trân trọng kính mời ${userInfo.name} và gia đình đến tham dự lễ
+                cưới của ${honorific}.
+            </p>
+            <p data-aos="fade-up">
+                * Lời mời online này thay cho tấm thiệp hồng trao
+                tay, mong ${userInfo.name} và gia đình sẽ chung vui cùng ${honorific} trong ngày đặc biệt này.</p>
+            `;
+
+        section5Elements.wishInput.value = `${userInfo.name} chúc hai vợ chồng trăm năm hạnh phúc.`;
     }
+
     userInfo.name && otherElements.appMusic.play();
+});
+
+section5Elements.wishInput.value = `Chúc hai vợ chồng trăm năm hạnh phúc.`;
+// Gửi lời chúc
+document.addEventListener("DOMContentLoaded", function () {
+    const confirmButton = section5Elements.acceptBtn;
+
+    confirmButton.addEventListener("click", function () {
+        const selectOption = section5Elements.acceptOption.value.trim();
+        const wishMessage = section5Elements.wishInput.value.trim();
+        const userName = userInfo.name.trim(); // Lấy tên người dùng từ input
+
+        // Kiểm tra dữ liệu đầu vào
+        if (!selectOption) {
+            alert("Vui lòng chọn câu trả lời!");
+            return;
+        }
+        // if (!userName) {
+        //     alert("Vui lòng nhập tên của bạn!");
+        //     return;
+        // }
+
+        const confirmSend = confirm(
+            "Bạn có chắc chắn muốn gửi xác nhận không?"
+        );
+        if (!confirmSend) {
+            return;
+        }
+
+        const requestData = {
+            user_name: userName || "Không tên",
+            attendance: selectOption,
+            relation: userInfo.relation,
+            wish: wishMessage || "Chúc mừng hạnh phúc!",
+        };
+
+        fetch(
+            "https://staff-333-api.herokuapp.com/api/wedding/accept-wedding",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(requestData),
+            }
+        )
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Lỗi từ server: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                alert("Gửi lời xác nhận thành công!");
+            })
+            .catch((error) => {
+                alert("Đã xảy ra lỗi! Vui lòng thử lại.");
+                console.error("Lỗi:", error);
+            });
+    });
+});
+
+// Đóng modal
+function handleCloseModal() {
+    section6Elements.section6.style.display = "none";
+}
+
+// Mở modal
+function handleOpenModal() {
+    section6Elements.section6.style.display = "flex";
+}
+
+// Tải ảnh và sao chép số tài khoản
+document.addEventListener("DOMContentLoaded", function () {
+    const downloadBtn = document.querySelector(".download-img");
+    const copyBtn = document.querySelector(".copy-img");
+    const bankImg = document.querySelector(".bank-img");
+
+    // Chức năng tải ảnh
+    downloadBtn.addEventListener("click", function () {
+        const imgSrc = bankImg.src;
+        const link = document.createElement("a");
+        link.href = imgSrc;
+        link.download = "bank.png"; // Đổi tên file khi tải xuống
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+
+    // Chức năng sao chép STK (giả sử STK hiển thị trong thuộc tính data-stk)
+    copyBtn.addEventListener("click", function () {
+        navigator.clipboard
+            .writeText(settings.stk)
+            .then(() => {
+                alert("Đã sao chép số tài khoản.");
+            })
+            .catch((err) => {
+                console.error("Lỗi khi sao chép");
+            });
+    });
+    // Đóng mở modal
+    section5Elements.giftBtn.addEventListener("click", handleOpenModal);
+    section6Elements.closeBtn.addEventListener("click", handleCloseModal);
 });
 
 // Các hàm tiện ích
 const customFunctions = {
-    // Tự động viết hoa chữ cái đầu tiên mỗi từ
+    // Tự động viết hoa chữ cái đầu tiên của mỗi từ
     capitalizeFirstLetter: (string) => {
-        if (string.length === 0) return string;
         return string
             .split(" ")
             .map(
@@ -147,50 +316,96 @@ const customFunctions = {
             )
             .join(" ");
     },
-    // Show - Hide elements
+
+    // Hiển thị phần tử
     showElement: (element) => {
-        element.style.display = "flex";
+        if (element) element.style.display = "flex";
     },
 
+    // Ẩn phần tử
     hideElement: (element) => {
-        element.style.display = "none";
+        if (element) element.style.display = "none";
     },
-    // Logic xác định xưng hô
+
+    // Xác định cách xưng hô dựa vào tên
     getHonorific: (name) => {
-        let honorific = "";
-        if (name.startsWith("Anh") || name.startsWith("Chị")) {
-            honorific = "chúng em"; // Nếu tên bắt đầu bằng "Chị", "Cô", "Dì", "Bà", "Ngoại", "Mẹ" gọi là "em"
+        if (!name) return ""; // Nếu không có tên, trả về chuỗi rỗng
+
+        const honorificGroups = {
+            "chúng em": ["Anh", "Chị"],
+            "chúng con": [
+                "Cô",
+                "Chú",
+                "Dì",
+                "Dượng",
+                "Ông",
+                "Bà",
+                "Mẹ",
+                "Cha",
+                "Bố",
+                "Ngoại",
+                "Cố",
+                "Thím",
+                "Cậu",
+                "Mợ",
+                "Mự",
+                "Bác",
+                "Hai",
+            ],
+            "anh chị": ["Em", "Bé"],
+            "chúng mình": ["Bạn"],
+        };
+
+        for (const [honorific, prefixes] of Object.entries(honorificGroups)) {
+            if (prefixes.some((prefix) => name.startsWith(prefix))) {
+                return honorific;
+            }
         }
-        if (
-            name.startsWith("Cô") ||
-            name.startsWith("Chú") ||
-            name.startsWith("Dì") ||
-            name.startsWith("Dượng") ||
-            name.startsWith("Ông") ||
-            name.startsWith("Bà") ||
-            name.startsWith("Mẹ") ||
-            name.startsWith("Cha") ||
-            name.startsWith("Bố") ||
-            name.startsWith("Ngoại") ||
-            name.startsWith("Cố") ||
-            name.startsWith("Thím") ||
-            name.startsWith("Cậu") ||
-            name.startsWith("Mợ") ||
-            name.startsWith("Mự") ||
-            name.startsWith("Bác") ||
-            name.startsWith("Hai")
-        ) {
-            honorific = "chúng con"; // Nếu tên bắt đầu bằng "Anh", "Chú", "Chú", "Bác", "Dượng", "Ông" gọi là "chị"
+
+        return ""; // Trả về chuỗi rỗng nếu không tìm thấy
+    },
+
+    // Đếm ngược đến một ngày cụ thể
+    countdown: (targetDate) => {
+        const countdownDate = new Date(targetDate).getTime();
+        if (isNaN(countdownDate)) {
+            console.error("Ngày đếm ngược không hợp lệ!");
+            return;
         }
-        if (name.startsWith("Em")) {
-            honorific = "anh chị"; // Nếu tên bắt đầu bằng "Em", gọi là "anh chị"
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+            const timeElements = document.querySelectorAll(".time");
+
+            if (distance <= 0) {
+                clearInterval(interval);
+                timeElements.forEach((el) => (el.textContent = "00"));
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+                (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+            const minutes = Math.floor(
+                (distance % (1000 * 60 * 60)) / (1000 * 60)
+            );
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            timeElements[0].textContent = days.toString().padStart(2, "0");
+            timeElements[1].textContent = hours.toString().padStart(2, "0");
+            timeElements[2].textContent = minutes.toString().padStart(2, "0");
+            timeElements[3].textContent = seconds.toString().padStart(2, "0");
         }
-        if (name.startsWith("Bạn")) {
-            honorific = "tớ"; // Nếu tên bắt đầu bằng "Bạn", gọi là "tớ"
-        }
-        return honorific; // Trả về honorific
+
+        updateCountdown(); // Cập nhật ngay khi trang tải
+        const interval = setInterval(updateCountdown, 1000);
     },
 };
+
+// Chạy đếm ngược đến ngày 20/03/2025
+customFunctions.countdown(settings.countdownDate);
 
 // Scroll events
 let scrollValue = window.scrollY;

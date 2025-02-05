@@ -6,6 +6,7 @@
     --primary-color: #ff96a7;
     --color-pink: #ffb1be;
     --bold-color: #ff3a3a;
+    --title-font: "Dancing-script";
 }
 
 html {
@@ -32,6 +33,7 @@ button {
 
 .container {
     width: 100%;
+    max-width: 100vw;
     height: auto;
 }
 
@@ -49,6 +51,18 @@ button {
     color: var(--bold-color);
 }
 
+.fa-download,
+.fa-copy {
+    color: green;
+    margin-right: 6px;
+}
+
+.fa-square-facebook {
+    color: #1a74ed;
+    font-size: 2rem;
+    margin-right: 6px;
+}
+
 .size-20 {
     font-size: 2rem;
 }
@@ -61,10 +75,27 @@ button {
     font-size: 3rem;
 }
 
+.mr-4 {
+    margin-right: 4px;
+}
+
+.mr-6 {
+    margin-right: 6px;
+}
+
+.ml-4 {
+    margin-left: 4px;
+}
+
+.ml-6 {
+    margin-left: 6px;
+}
+
 .btn {
     background-color: var(--primary-color);
     font-weight: 700;
-    z-index: 1;
+    z-index: 0;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -106,7 +137,7 @@ button {
 }
 
 .header__title {
-    font-family: "Dancing-script";
+    font-family: var(--title-font);
     font-size: 2.5rem;
     text-align: center;
     margin-top: 10px;
@@ -197,119 +228,624 @@ button {
     display: none;
 }
 
-/* SECTION 1 */
-.ladi-wraper {
-    background-color: white;
-}
-
-.ladi-section {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.ladi__background {
-    position: absolute;
+/* Background image */
+.bg-img {
+    position: sticky;
     top: 0;
-    left: 0;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    object-position: center;
-    z-index: 0;
-    filter: brightness(50%);
 }
 
-.lady__shape1 {
-    position: absolute;
+.title {
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 20vw;
-    height: auto;
-    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
 }
 
-.ladi__content {
+.title .wrapper {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    margin: auto;
+    background: url(/assets/img/mark/may.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title .wrapper::before {
+    position: absolute;
+    content: "";
+    top: 4%;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: url(/assets/img/mark/may_bay2.png);
+    transform: scaleX(-1);
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* background-color: #ff3a3a; */
+    animation: animationLeftRight 5s ease-in infinite;
+}
+
+.title .heading,
+.title .desc {
+    position: relative;
+    top: -20px;
+    text-shadow: 1.5px -1px 0px #fff;
+}
+
+.title .heading {
+    font-size: 4rem;
+    font-family: var(--title-font);
+    display: block;
+    color: var(--bold-color);
+}
+
+.title .desc {
+    display: block;
+    color: #ffffff;
+    text-shadow: 0px 0px 4px #565656;
+}
+
+.section1,
+.section2,
+.section3,
+.section4,
+.section5,
+.section6,
+.section7 {
+    position: relative;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    overflow: hidden;
+    display: none;
+}
+
+/* SECTION 1 */
+.section1 {
+    overflow: hidden;
+}
+
+.section1 .wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    backdrop-filter: blur(10px);
+    background-color: #ffffffd9;
+    display: flex;
+    align-items: center;
+}
+
+.section1 .desc {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    max-width: calc(100vw - 500px);
+    flex: 1;
+    font-size: 2rem;
+    color: #333;
+    /* text-shadow: 0.5px 0.5px #ffffff; */
+    margin-left: 50px;
+    overflow: hidden;
+}
+
+.section1 .img {
+    position: absolute;
+    border: solid 10px #ffffffd9;
+    border-radius: 20px;
+    bottom: 0;
+    right: 0;
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* SECTION 2 */
+.section2 {
+    height: auto;
+    padding: 50px;
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    background: url(/assets/img/mark/11.jpg);
+    background-size: cover;
+    object-fit: cover;
 }
 
-.ladi__headline {
-    font-family: "Fleur";
-    font-size: 10rem;
-    color: white;
-    z-index: 1;
+.section2 .wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #ffd1e85e;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    gap: 10px;
 }
 
-.ladi__headline-date--DL {
-    font-family: "Thei";
+.section2 .passport {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 }
 
-.ladi__headline-date--AL {
-    font-family: "Mulish";
+.section2 .passport .img {
+    width: 700px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.section2 .info-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    row-gap: 4px;
+    order: 1;
+    overflow: hidden;
+}
+
+.section2 .info-item {
+    flex: 1;
+}
+
+.section2 .info-item .img {
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    border: solid 1px #fff;
+    border-radius: 10px;
+    object-fit: cover;
+    display: flex;
+    margin-top: 10px;
+}
+
+.section2 .info-item .info-item-box {
+    margin-top: 4px;
+}
+
+.section2 .info-item .item--lable {
+    text-align: center;
+    font-size: 4rem;
+    font-family: "Viettay";
+}
+
+/* SECTION 3 */
+.section3 {
+    position: relative;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section3 .wrapper {
+    position: relative;
+    padding: 20px 20px 10px 20px;
+    font-size: 2.5rem;
+    background-color: var(--color-pink);
+    border-radius: 20px;
+}
+
+.section3 .airplane {
+    position: absolute; /* Để di chuyển tự do */
+    width: 60px; /* Kích thước máy bay */
+    animation: fly-around 15s linear infinite; /* Tạo hiệu ứng chuyển động */
+}
+
+.section3 .desc {
+    margin-bottom: 10px;
     font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
 }
 
-/* Info couple */
-.ladi__info {
-    width: 100vw;
+.section3 .maps {
+    border-radius: 10px;
+}
+
+.section3 .link {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    /* text-decoration: none; */
+    color: none;
+    font-size: 1.6rem;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: #fff;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+    background-color: var(--color-pink);
+    transition: 0.2s;
+}
+
+.section3 .link:hover {
+    background-color: rgba(0, 0, 255, 0.8);
+    border: 2px solid var(--color-pink);
+}
+
+/* SECTION 4 */
+.section4 {
+    background-color: #fff;
+    height: auto;
+    padding: 0 50px 80px 50px;
+}
+
+.section4 .list-imgs {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.section4 .heading {
+}
+
+.section4 .img {
+    max-width: 400px;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: solid 1px var(--bold-color);
+    padding: 2px;
+}
+/* 
+.section4 .img:nth-child(2) {
+    position: relative;
+    top: -50px;
+} */
+
+/* SECTION 5 */
+.section5 {
+    background: url(/assets/img/mark/nen-maybay.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.section5 .wrapper {
+    width: 1100px;
+    height: auto;
     padding: 50px;
-}
-
-.info-couple-items {
+    background-color: #fff;
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 50px; /* Khoảng cách giữa các mục */
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 8px #999;
+    border-radius: 12px;
 }
 
-.couple-item {
+.section5 .heading {
+}
+
+.section5 .desc {
+    margin-bottom: 20px;
+}
+
+/* Time */
+.section5 .countdown {
+    width: 500px;
+    height: 400px;
+    background-color: var(--color-pink);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section5 .items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 30px;
+}
+
+.section5 .countdown .heading {
+}
+
+.section5 .countdown .box {
+    width: 460px;
+    height: 360px;
+    background: url(/assets/img/couple/couple1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section5 .countdown .box .heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 40px;
+    background-color: #ff96a799;
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.section5 .countdown .times {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.section5 .countdown .time-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section5 .countdown .time {
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #333;
+    box-shadow: 0px 0px 10px #333;
+}
+
+.section5 .countdown .desc {
+    text-align: center;
+    color: #fff;
+    background-color: #ff96a799;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+/* Info */
+.section5 .info-accept {
+    width: 500px;
+    height: 400px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.section5 .info-accept .options,
+.section5 .info-accept .wish {
+    width: 100%;
+    border: solid 1px var(--primary-color);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #f1f1f1;
+    outline: none;
+}
+
+.section5 .info-accept .options {
+    height: 50px;
+    padding: 6px;
+}
+
+.section5 .info-accept .wish {
+    height: 300px;
+    padding: 10px;
+}
+
+.section5 .actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.section5 .info-accept-btn,
+.section5 .gift-btn {
+    width: 50%;
+    height: 50px;
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.section5 .gift-btn {
+    border: none;
+    background-color: #fff5f7;
+    color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 1px var(--primary-color);
+}
+
+.section6 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #87878772;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.section6 .wrapper {
+    position: relative;
+    width: 400px;
+    background-color: #f1f1f1;
+    padding: 40px;
+    padding-top: 0;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.section6 .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 6px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.section6 .close-btn i {
+    font-size: 3rem;
+    color: #333;
+}
+
+.section6 .heading {
+    margin: 10px 0 20px 0;
+}
+
+.section6 .desc {
     text-align: center;
 }
 
-.couple-img-wrapper {
+.section6 .box {
+}
+
+.section6 .box .bank-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: solid 1px var(--primary-color);
+}
+
+.section6 .box .actions {
     display: flex;
+    justify-content: space-between;
+}
+
+.section6 .box .action-item {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+
+.section6 .box .social {
+    display: flex;
     justify-content: center;
-    width: 500px;
-    height: 600px;
-    background: url(/assets/img/mark/4.png) center center no-repeat;
-    background-size: contain;
+    align-items: center;
+    flex-direction: column;
+    background-color: #d0d0d0;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.section6 .box .social .sent {
+    margin-bottom: 10px;
+}
+
+.section6 .box .social-items {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.section6 .box .link-bride,
+.section6 .box .link-groom {
+    width: 50%;
+    padding: 8px;
+    text-decoration: none;
+    outline: none;
+    border: solid 1px #1a74ed;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dddddd;
+}
+
+.section6 .box .link-bride .text,
+.section6 .box .link-groom .text {
+    color: #333;
+}
+
+/* Section 7 */
+.section7 {
+    background: url(/assets/img/mark/nen-maybay.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
-}
-
-.couple-img {
-    width: calc(100% - 140px);
-    height: calc(100% - 140px);
     object-fit: cover;
-    border-radius: 20px;
-    border: solid 3px #bf9758;
-}
-
-.couple-item--name {
-    font-family: "Fleur";
-    font-size: 5rem;
-    color: #bf9758;
-}
-
-.couple-heart-wrapper {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top: solid 30px var(--primary-color);
+    border-bottom: solid 30px var(--primary-color);
 }
 
-.couple-heart {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
+.section7 .desc {
+    width: 60%;
+    text-align: center;
+    font-style: italic;
+}
+
+.section7 .heading {
+    font-family: "Thei";
+    font-size: 10rem;
+    text-shadow: 3px 3px #fff;
+}
+
+.section7 .couple {
+    font-size: 3rem;
+    border-bottom: solid 5px var(--primary-color);
+}
+
+.section1,
+.section2,
+.section3,
+.section4,
+.section5,
+.section7,
+.bg-img,
+.title {
+    display: none;
 }
 
 /* Animation */
@@ -321,6 +857,28 @@ button {
 .animation__slide-up {
     animation: animationSlideUp 1.2s ease-out infinite;
 }
+
+.animation__scale {
+    animation: animationScale 2s linear infinite;
+}
+
+.animation__up-down {
+    animation: animationUpDown 3s linear infinite;
+}
+
+.animation__left-right {
+    animation: animationLeftRight 3s linear infinite;
+}
+
+.animation__heading {
+    font-family: var(--title-font);
+    font-size: 2.5rem;
+    text-align: center;
+    animation: animationScale 2s linear infinite;
+    margin-bottom: 50px;
+}
+
+/* Keyframes for typing effect */
 
 @keyframes flipY {
     0% {
@@ -343,4 +901,112 @@ button {
         transform: translateY(-50px);
         opacity: 0;
     }
+}
+
+@keyframes animationScale {
+    0% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes animationUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes animationLeftRight {
+    0% {
+        left: -30%;
+        opacity: 0;
+        transform: scaleX(-1) translateY(200px);
+    }
+    1% {
+        left: -30%;
+        opacity: 1;
+        transform: scaleX(-1) translateY(200px);
+    }
+    90% {
+        left: 60%;
+        opacity: 1;
+        transform: scaleX(-1) translateY(0px);
+    }
+    100% {
+        left: 80%;
+        opacity: 0;
+        transform: scaleX(-1) translateY(0px);
+    }
+}
+
+@keyframes fly-around {
+    0% {
+        top: -40px;
+        left: -55px;
+        transform: scaleX(-1) rotate(0deg);
+    }
+    24% {
+        top: -40px;
+        left: 100%;
+        transform: scaleX(-1) rotate(0deg);
+    }
+    25% {
+        top: -40px;
+        left: 100%;
+        transform: rotate(-90deg);
+    }
+    49% {
+        top: calc(100% + 10px);
+        left: 100%;
+        transform: rotate(-90deg);
+    }
+    50% {
+        top: calc(100% + 10px);
+        left: 100%;
+        transform: rotate(0deg);
+    }
+    74% {
+        top: calc(100% + 10px);
+        left: -65px;
+        transform: rotate(0deg);
+    }
+    75% {
+        top: calc(100% + 10px);
+        left: -65px;
+        transform: scaleX(-1) rotate(50deg);
+    }
+    99% {
+        top: -40px;
+        left: -65px;
+        transform: scaleX(-1) rotate(50deg);
+    }
+    100% {
+        top: -40px;
+        left: -55px;
+        transform: scaleX(-1) rotate(0deg);
+    }
+}
+
+.delay0s5 {
+    animation-delay: 0.5s;
+}
+.delay1s0 {
+    animation-delay: 1s;
+}
+.delay1s5 {
+    animation-delay: 1.5s;
+}
+.delay2s0 {
+    animation-delay: 2s;
 }
