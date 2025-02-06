@@ -152,8 +152,22 @@
         display: none;
     }
 
+    .section3 {
+        height: auto;
+        padding: 40px 0;
+        padding-bottom: 100px;
+    }
+
     .section3 .wrapper {
         width: 100%;
+    }
+
+    .section3 .heading {
+        margin-bottom: 50px;
+    }
+
+    .section3 .airplane {
+        z-index: 1;
     }
 
     .section3 .maps {
@@ -161,7 +175,7 @@
     }
 
     .section3 .link {
-        width: 100%;
+        width: 80%;
         bottom: -50px;
         text-align: center;
     }
@@ -187,7 +201,7 @@
     }
 
     .section5 .desc {
-        width: 350px;
+        width: 360px;
         text-align: justify;
     }
 
@@ -209,6 +223,10 @@
         width: calc(100% - 20px);
     }
 
+    .section5 .actions {
+        gap: 10px;
+    }
+
     .section6 .wrapper {
         max-width: calc(100% - 20px);
     }
@@ -224,6 +242,10 @@
 
     .section7 .couple {
         font-size: 2rem;
+    }
+
+    .animation__heading {
+        margin-bottom: 30px;
     }
 
     @keyframes animationLeftRight {

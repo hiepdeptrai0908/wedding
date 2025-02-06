@@ -489,6 +489,7 @@ button {
     background-color: #fff;
     height: auto;
     padding: 0 50px 80px 50px;
+    flex-direction: column;
 }
 
 .section4 .list-imgs {
