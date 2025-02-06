@@ -105,14 +105,14 @@
     .title .wrapper {
         width: 300px;
         height: 200px;
-        top: -300px;
+        top: -270px;
     }
 
     .title .wrapper::before {
         width: 200px;
         height: 200px;
-        animation-duration: 3s;
-        opacity: 0.9;
+        animation-duration: 4s;
+        opacity: 0;
     }
 
     .title .heading {
