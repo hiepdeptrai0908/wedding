@@ -420,3 +420,60 @@ window.addEventListener("scroll", () => {
     }
     scrollValue = currentScroll;
 });
+
+// lướt ảnh tự động
+document.addEventListener("DOMContentLoaded", function () {
+    const listImgsElements = document.querySelectorAll(".list-imgs"); // Lựa chọn tất cả các list-imgs
+    listImgsElements.forEach((listImgs) => {
+        const images = listImgs.querySelectorAll(".img"); // Lấy tất cả các ảnh trong mỗi list-imgs
+        let currentIndex = 0;
+        let autoScrollInterval;
+        let isUserScrolling = false;
+        let scrollTimeout;
+        const intervalTime = 2000; // Thời gian giữa mỗi lần cuộn (ms)
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                if (!isUserScrolling) {
+                    currentIndex++;
+
+                    // Khi đến cuối, quay lại đầu
+                    if (currentIndex >= images.length) {
+                        currentIndex = 0;
+                    }
+
+                    scrollToImage(currentIndex);
+                }
+            }, intervalTime);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        function scrollToImage(index) {
+            if (images[index]) {
+                listImgs.scrollTo({
+                    left: images[index].offsetLeft - listImgs.offsetLeft - 20, // Trừ đi 20px
+                    behavior: "smooth",
+                });
+            }
+        }
+
+        // Khi người dùng cuộn, dừng tự động cuộn
+        listImgs.addEventListener("scroll", function () {
+            isUserScrolling = true;
+            stopAutoScroll();
+
+            // Tiếp tục sau 2 giây nếu không có cuộn tiếp theo
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                isUserScrolling = false;
+                startAutoScroll();
+            }, 2000);
+        });
+
+        // Bắt đầu tự động cuộn khi trang tải xong
+        startAutoScroll();
+    });
+});
