@@ -476,7 +476,7 @@ button {
     border-top: 2px solid #fff;
     border-left: 2px solid #fff;
     border-right: 2px solid #fff;
-    background-color: var(--color-pink);
+    background-color: #ff7575;
     transition: 0.2s;
 }
 
@@ -681,7 +681,7 @@ button {
     width: 50%;
     height: 50px;
     color: #fff;
-    background-color: var(--primary-color);
+    background-color: var(--bold-color);
 }
 
 .section5 .gift-btn {
