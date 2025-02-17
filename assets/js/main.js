@@ -228,6 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        showLoadingModal();
         const requestData = {
             user_name: userName || "Không tên",
             attendance: selectOption,
@@ -257,6 +258,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch((error) => {
                 alert("Đã xảy ra lỗi! Vui lòng thử lại.");
                 console.error("Lỗi:", error);
+            })
+            .finally(() => {
+                hideLoadingModal();
             });
     });
 });
@@ -430,7 +434,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let autoScrollInterval;
         let isUserScrolling = false;
         let scrollTimeout;
-        const intervalTime = 2000; // Thời gian giữa mỗi lần cuộn (ms)
+        const intervalTime = 1500; // Thời gian giữa mỗi lần cuộn (ms)
 
         function startAutoScroll() {
             autoScrollInterval = setInterval(() => {
@@ -470,10 +474,22 @@ document.addEventListener("DOMContentLoaded", function () {
             scrollTimeout = setTimeout(() => {
                 isUserScrolling = false;
                 startAutoScroll();
-            }, 2000);
+            }, intervalTime);
         });
 
         // Bắt đầu tự động cuộn khi trang tải xong
         startAutoScroll();
     });
 });
+
+// Hàm hiện modal loading
+function showLoadingModal() {
+    const loadingModal = document.getElementById("loadingModal");
+    loadingModal.style.display = "flex";
+}
+
+// Hàm để ẩn modal loading
+function hideLoadingModal() {
+    const loadingModal = document.getElementById("loadingModal");
+    loadingModal.style.display = "none";
+}
