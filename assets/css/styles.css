@@ -129,7 +129,7 @@ button {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-image: url(/assets/img/background/header_bg_destop.webp);
+    background-image: url(../img/background/header_bg_destop.webp);
     background-repeat: no-repeat;
     background-size: cover;
     filter: brightness(0.8);
@@ -235,7 +235,7 @@ button {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    background: url(/assets/img/couple/VIEN3915-min.webp);
+    background: url(../img/couple/VIEN3915-min.webp);
     background-size: cover;
 }
 
@@ -254,7 +254,7 @@ button {
     height: 400px;
     text-align: center;
     margin: auto;
-    background: url(/assets/img/mark/may.png);
+    background: url(../img/mark/may.png);
     background-size: contain;
     background-repeat: no-repeat;
     object-fit: cover;
@@ -271,7 +271,7 @@ button {
     left: 0;
     width: 300px;
     height: 300px;
-    background: url(/assets/img/mark/may_bay2.png);
+    background: url(../img/mark/may_bay2.png);
     transform: scaleX(-1);
     background-repeat: no-repeat;
     background-size: contain;
@@ -365,7 +365,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url(/assets/img/mark/11.jpg);
+    background: url(../img/mark/11.jpg);
     background-size: cover;
     object-fit: cover;
 }
@@ -522,7 +522,7 @@ button {
 
 /* SECTION 5 */
 .section5 {
-    background: url(/assets/img/mark/nen-maybay.jpg);
+    background: url(../img/mark/nen-maybay.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover;
@@ -576,7 +576,7 @@ button {
 .section5 .countdown .box {
     width: 460px;
     height: 360px;
-    background: url(/assets/img/couple/VIEN4467-min.webp);
+    background: url(../img/couple/VIEN4467-min.webp);
     background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover;
@@ -814,7 +814,7 @@ button {
 
 /* Section 7 */
 .section7 {
-    background: url(/assets/img/mark/nen-maybay.jpg);
+    background: url(../img/mark/nen-maybay.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover;

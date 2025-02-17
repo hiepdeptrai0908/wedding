@@ -52,7 +52,7 @@
 
     .header__background {
         position: absolute;
-        background-image: url(/assets/img/background/header_bg_mobile.webp);
+        background-image: url(../img/background/header_bg_mobile.webp);
         background-position: 50% 50%;
         z-index: -1;
     }
@@ -71,7 +71,7 @@
     }
 
     .bg-img {
-        background: url(/assets/img/couple/VIEN4532-min.webp);
+        background: url(../img/couple/VIEN4532-min.webp);
         background-size: cover;
         background-repeat: no-repeat;
         object-fit: cover;
@@ -80,7 +80,7 @@
     /* Info days */
     .info-days {
         flex-direction: column;
-        background: url(/assets/img/background/bg_02.jpg);
+        background: url(../img/background/bg_02.jpg);
         background-size: cover;
         background-position: 50% 50%;
     }
@@ -254,7 +254,7 @@
     }
 
     .section5 .countdown .box {
-        background: url(/assets/img/couple/VIEN4918-min.webp);
+        background: url(../img/couple/VIEN4918-min.webp);
         background-size: cover;
         object-fit: cover;
         max-width: calc(100vw - 40px);
