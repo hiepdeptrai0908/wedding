@@ -64,6 +64,7 @@
     }
     .header__des {
         font-size: 1.2rem;
+        text-align: center;
     }
 
     .header__submit-text {
