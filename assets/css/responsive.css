@@ -276,6 +276,10 @@
         gap: 10px;
     }
 
+    .section5 .info-accept span {
+        font-size: 1.2rem;
+    }
+
     .section6 .wrapper {
         max-width: calc(100% - 20px);
     }
@@ -287,6 +291,7 @@
 
     .section7 .heading {
         font-size: 6rem;
+        text-shadow: 1px 1px #fff;
     }
 
     .section7 .couple {

@@ -668,6 +668,14 @@ button {
     padding: 10px;
 }
 
+.section5 .info-accept span {
+    font-size: 1.6rem;
+    font-style: italic;
+    color: #989898;
+    margin-top: 4px;
+    text-align: center;
+}
+
 .section5 .actions {
     width: 100%;
     display: flex;
@@ -835,7 +843,7 @@ button {
 .section7 .heading {
     font-family: "Thei";
     font-size: 10rem;
-    text-shadow: 3px 3px #fff;
+    text-shadow: 2px 2px #fff;
 }
 
 .section7 .couple {
