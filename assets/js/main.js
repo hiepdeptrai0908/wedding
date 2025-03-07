@@ -196,6 +196,17 @@ headerElements.formBtn.addEventListener("click", (e) => {
             `;
 
         section5Elements.wishInput.value = `${userInfo.name} chúc hai vợ chồng trăm năm hạnh phúc.`;
+
+        fetch("http://localhost:8888/api/wedding/view-wedding", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                user_name: userInfo.name,
+                relation: userInfo.relation, // Nếu cần gửi thêm quan hệ
+            }),
+        });
     }
 
     userInfo.name && otherElements.appMusic.play();
