@@ -197,7 +197,7 @@ headerElements.formBtn.addEventListener("click", (e) => {
 
         section5Elements.wishInput.value = `${userInfo.name} chúc hai vợ chồng trăm năm hạnh phúc.`;
 
-        fetch("http://localhost:8888/api/wedding/view-wedding", {
+        fetch("https://staff-333-api.herokuapp.com/api/wedding/view-wedding", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
