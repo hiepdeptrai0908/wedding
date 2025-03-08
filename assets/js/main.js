@@ -197,16 +197,21 @@ headerElements.formBtn.addEventListener("click", (e) => {
 
         section5Elements.wishInput.value = `${userInfo.name} chúc hai vợ chồng trăm năm hạnh phúc.`;
 
-        fetch("https://staff-333-api.herokuapp.com/api/wedding/view-wedding", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                user_name: userInfo.name,
-                relation: userInfo.relation, // Nếu cần gửi thêm quan hệ
-            }),
-        });
+        if (!["Nháp", "Demo", "Admin"].includes(userInfo.name)) {
+            fetch(
+                "https://staff-333-api.herokuapp.com/api/wedding/view-wedding",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        user_name: userInfo.name,
+                        relation: userInfo.relation, // Nếu cần gửi thêm quan hệ
+                    }),
+                }
+            );
+        }
     }
 
     userInfo.name && otherElements.appMusic.play();
